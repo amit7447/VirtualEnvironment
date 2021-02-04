@@ -47,7 +47,8 @@
             light4.diffuse = new BABYLON.Color3(1, 1, 0);
             light4.intensity = 1;
 
-            const camera = new BABYLON.FreeCamera("FreeCamera", new BABYLON.Vector3(0, 5, 0), scene);
+            const camera = new BABYLON.FreeCamera("FreeCamera", new BABYLON.Vector3(0, 2, 0), scene);
+            camera.rotation = new BABYLON.Vector3(0, -Math.PI /2, 0);
             camera.speed = 2;
             camera.keysUp.push(87);
             camera.keysDown.push(83);
@@ -81,7 +82,7 @@
 
                 var ground = BABYLON.Mesh.CreatePlane("ground", 150.0, scene);
                 ground.material = groundMaterial;
-                ground.position = new BABYLON.Vector3(2, -2.2, 0);
+                ground.position = new BABYLON.Vector3(2, 0.5, 0);
                 ground.rotation = new BABYLON.Vector3(Math.PI / 2, 0, 0);
                 ground.checkCollisions = true;
 
@@ -90,7 +91,7 @@
                 scene.collisionsEnabled = true;
                 camera.checkCollisions = true;
                 camera.applyGravity = true;
-                camera.ellipsoid = new BABYLON.Vector3(1, 4, 1);
+                camera.ellipsoid = new BABYLON.Vector3(1, 2, 1);
             });
              //SKYBOX
              var skyboxMaterial = new BABYLON.SkyMaterial("skyMaterial", scene);
